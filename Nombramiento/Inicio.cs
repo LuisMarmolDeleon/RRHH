@@ -5,7 +5,7 @@ namespace Nombramiento
     class Inicio
     {
 
-       private static void Main(string[]args)
+        private static void Main(string[] args)
         {
             if (args is null)
             {
@@ -13,8 +13,8 @@ namespace Nombramiento
             }
 
             Bienvenida();
-        } 
-        
+        }
+
         //Funcion de Bienvenida
         public static void Bienvenida()
         {
@@ -35,7 +35,7 @@ namespace Nombramiento
                 case 2:
                     Console.Clear();
                     Console.WriteLine("Ingrese numero de cedula para realizar una solicitud");
-                    cedula=Console.ReadLine();
+                    cedula = Console.ReadLine();
                     Busqueda.Buscador(cedula);
                     break;
 

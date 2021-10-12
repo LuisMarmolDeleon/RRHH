@@ -15,7 +15,7 @@ namespace Nombramiento
             {
                 return new ClaseTiempoCompleto();
             }
-            else if (tanda==2)
+            else if (tanda == 2)
             {
                 return new ClaseMedioTiempo();
             }

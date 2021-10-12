@@ -8,7 +8,7 @@ namespace Nombramiento
 {
     class Permiso
     {
-        private static string fecha_desde,fecha_hasta;
+        private static string fecha_desde, fecha_hasta;
         public static void Solicitar_Permiso()
         {
             Console.Clear();

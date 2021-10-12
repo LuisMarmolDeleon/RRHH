@@ -11,11 +11,11 @@ namespace Nombramiento
         public static void RegistroEmpleado()
         {
             Console.WriteLine("Ingrese el numero de cedula\n");
-            ClaseDatos.Cedula =Console.ReadLine();
-             Console.Clear();
+            ClaseDatos.Cedula = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("\nIngrese el nombre del empleado\n");
             ClaseDatos.NombreCompleto_empleado = Console.ReadLine();
-             Console.Clear();
+            Console.Clear();
             Console.WriteLine("Ahora ingrese el sueldo por hora de " + ClaseDatos.NombreCompleto_empleado + "\n");
             ClaseDatos.SalarioPorHora = Convert.ToInt32(Console.ReadLine());
             Agregar();

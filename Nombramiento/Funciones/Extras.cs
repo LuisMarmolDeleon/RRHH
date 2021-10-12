@@ -9,7 +9,7 @@ namespace Nombramiento
     class Extras
     {
         //Funcion de limpiar pantalla
-       
+
 
         public static void Volver()
         {

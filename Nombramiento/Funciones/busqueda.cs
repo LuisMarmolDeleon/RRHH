@@ -36,7 +36,7 @@ namespace Nombramiento
         }
 
         //Se almacena los datos en unas variables para uso universal
-        public static void Almacenador_Variable(int localizacion)
+        private static void Almacenador_Variable(int localizacion)
         {
             cedula = TablaADM.Lista[localizacion];
 
@@ -56,7 +56,7 @@ namespace Nombramiento
         }
 
         //Impresion de dato encontrado
-        public static void Mostrar_Informacion()
+        private static void Mostrar_Informacion()
         {
             Console.Clear();
             Console.WriteLine("Dato encontrado\n\n");
@@ -77,7 +77,7 @@ namespace Nombramiento
         }
 
         //Se asigna a la clase de empleado
-        public static void SetAClase()
+        private static void SetAClase()
         {
             ClaseDatos.NombreCompleto_empleado = nombre;
 
@@ -91,7 +91,7 @@ namespace Nombramiento
         }
 
         //Solicitudes
-        public static void Solicitud()
+        private static void Solicitud()
         {
             
             Console.WriteLine("\n\nElija que solicitud hara: \n");
