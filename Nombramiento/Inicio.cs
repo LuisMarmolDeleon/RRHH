@@ -34,7 +34,7 @@ namespace Nombramiento
 
                 case 2:
                     Console.Clear();
-                    Console.WriteLine("Ingrese numero de cedula");
+                    Console.WriteLine("Ingrese numero de cedula para realizar una solicitud");
                     cedula=Console.ReadLine();
                     Busqueda.Buscador(cedula);
                     break;

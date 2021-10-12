@@ -9,7 +9,7 @@ namespace Nombramiento
     class Permiso
     {
         private static string fecha_desde,fecha_hasta;
-        public static void Solicitar_Permiso(int localizacion)
+        public static void Solicitar_Permiso()
         {
             Console.Clear();
             Console.WriteLine("Cuando quiere Solicitar el permiso?\nIngrese formato dia/mes/año con los slash");
@@ -26,10 +26,10 @@ namespace Nombramiento
             {
                 Console.WriteLine("No puede solicitar una fecha tan larga de permiso");
             }
-            Console.WriteLine(TablaADM.Lista[localizacion + 1] + " Tendra " + dias_vacaciones + " Dias de Permiso\n\n");
+            Console.WriteLine(Busqueda.nombre + " Tendra " + dias_vacaciones + " Dias de Permiso\n\n");
             Console.Clear();
             Almacena();
-            Sobreescribe(localizacion);
+            Sobreescribe();
             Print.Printer();
         }
 
@@ -45,13 +45,13 @@ namespace Nombramiento
         }
 
         //Se sobreescribe los datos
-        private static void Sobreescribe(int localizacion)
+        private static void Sobreescribe()
         {
-            TablaADM.Lista[localizacion + 5] = ClaseDatos.Estado_laboral;
+            Busqueda.estado = ClaseDatos.Estado_laboral;
 
-            TablaADM.Lista[localizacion + 6] = fecha_desde;
+            Busqueda.desde = fecha_desde;
 
-            TablaADM.Lista[localizacion + 7] = fecha_hasta;
+            Busqueda.hasta = fecha_hasta;
 
         }
     }

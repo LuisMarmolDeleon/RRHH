@@ -8,10 +8,11 @@ namespace Nombramiento
 {
     class Busqueda
     {
+        public static string cedula, nombre, jornada, estado, salario, cuenta_bancaria,desde,hasta;
         //Busqueda de cedula de identidad
         public static void Buscador(String cedula)
         {
-            int localizador=9*9*9;
+            int? localizador=null;
              for(int i = 0; i < TablaADM.Lista.Count; i+=9)
              {
                  if (TablaADM.Lista[i] == cedula)
@@ -21,9 +22,10 @@ namespace Nombramiento
                  }
                 Console.Clear();
              }
-            if (localizador != 9*9*9)
+            if (localizador !=null)
             {
-                Printer(localizador);
+                Almacenador_Variable((int)localizador);
+                Mostrar_Informacion();
             }
             else
             {
@@ -33,58 +35,85 @@ namespace Nombramiento
             }
         }
 
+        //Se almacena los datos en unas variables para uso universal
+        public static void Almacenador_Variable(int localizacion)
+        {
+            cedula = TablaADM.Lista[localizacion];
+
+            nombre = TablaADM.Lista[localizacion + 1];
+
+            salario = TablaADM.Lista[localizacion + 2];
+
+            cuenta_bancaria = TablaADM.Lista[localizacion + 3];
+
+            jornada = TablaADM.Lista[localizacion + 4];
+
+            estado = TablaADM.Lista[localizacion + 5];
+
+            desde = TablaADM.Lista[localizacion+6];
+
+            hasta = TablaADM.Lista[localizacion+7];
+        }
+
         //Impresion de dato encontrado
-        public static void Printer(int localizacion)
+        public static void Mostrar_Informacion()
         {
             Console.Clear();
             Console.WriteLine("Dato encontrado\n\n");
-            Console.WriteLine("Cedula: "+TablaADM.Lista[localizacion]);
+            Console.WriteLine("Cedula: "+cedula);
 
-            Console.WriteLine("Nombre: "+TablaADM.Lista[localizacion+ 1]);
+            Console.WriteLine("Nombre: "+nombre);
 
-            Console.WriteLine("Sueldo: "+TablaADM.Lista[localizacion + 2]);
+            Console.WriteLine("Salario por hora: "+salario);
 
-            Console.WriteLine("Numero de cuenta: "+TablaADM.Lista[localizacion + 3]);
+            Console.WriteLine("Numero de cuenta: "+cuenta_bancaria);
 
-            Console.WriteLine("Tanda laboral: "+TablaADM.Lista[localizacion + 4]);
+            Console.WriteLine("Tanda laboral: "+jornada);
 
-            Console.WriteLine("Estado laboral: "+TablaADM.Lista[localizacion + 5]);
+            Console.WriteLine("Estado laboral: "+estado);
 
-            SetAClase(localizacion);
-            Solicitud(localizacion);
+            SetAClase();
+            Solicitud();
         }
 
         //Se asigna a la clase de empleado
-        public static void SetAClase(int localizacion)
+        public static void SetAClase()
         {
-            ClaseDatos.NombreCompleto_empleado = TablaADM.Lista[localizacion + 1];
+            ClaseDatos.NombreCompleto_empleado = nombre;
 
-            ClaseDatos.SalarioPorHora = Convert.ToInt32(TablaADM.Lista[localizacion + 2]);
+            ClaseDatos.SalarioPorHora = Convert.ToInt32(salario);
 
-            ClaseDatos.Cuenta = Convert.ToInt32(TablaADM.Lista[localizacion + 3]);
+            ClaseDatos.Cuenta = Convert.ToInt32(cuenta_bancaria);
 
-            ClaseDatos.Tanda = TablaADM.Lista[localizacion + 4];
+            ClaseDatos.Tanda = jornada;
 
-            ClaseDatos.Estado_laboral = TablaADM.Lista[localizacion + 5];
+            ClaseDatos.Estado_laboral = estado;
         }
 
         //Solicitudes
-        public static void Solicitud(int localizacion)
+        public static void Solicitud()
         {
             
             Console.WriteLine("\n\nElija que solicitud hara: \n");
             Console.WriteLine("1-Vacaciones\n2-Permiso");
-            Console.Write("3-Desvinculacion\nSu opcion: ");
+            Console.Write("3-Desvinculacion\n4-Retroceder\nSu opcion: ");
            int op = Convert.ToInt32(Console.ReadLine());
             switch (op)
             {
-                case 1: Vacaciones.Solicitar_vacaciones(localizacion);
+                case 1: Vacaciones.Solicitar_vacaciones();
                     break;
+
                 case 2:
-                    Permiso.Solicitar_Permiso(localizacion);
+                    Permiso.Solicitar_Permiso();
                     break;
+
                 case 3:
-                    Desvinculacion.SolicitarDesvinculacion(localizacion);
+                    Desvinculacion.SolicitarDesvinculacion();
+                    break;
+
+                case 4:
+                    Console.Clear();
+                    Inicio.Bienvenida();
                     break;
             }
         }

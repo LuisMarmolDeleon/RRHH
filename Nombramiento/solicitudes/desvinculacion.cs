@@ -12,10 +12,10 @@ namespace Nombramiento
         private static string motivo;
 
         //Confirmacion de desvinculacion
-        public static void SolicitarDesvinculacion(int localizacion)
+        public static void SolicitarDesvinculacion()
         {
             Console.Clear();
-            Console.WriteLine("Desea desvincular a:" + TablaADM.Lista[localizacion + 1]);
+            Console.WriteLine("Desea desvincular a:" + Busqueda.nombre);
             Console.WriteLine("1-Si\n2-No\n");
             int op = Convert.ToInt32(Console.ReadLine());
             switch (op)
