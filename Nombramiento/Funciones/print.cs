@@ -15,27 +15,27 @@ namespace Nombramiento
             TextWriter txtw;
             
             //El documento se creara con el nombre y el estado laboral
-            txtw = new StreamWriter(ClaseDatos.NombreCompleto_empleado+ClaseDatos.estado_laboral+".txt");
+            txtw = new StreamWriter(ClaseDatos.NombreCompleto_empleado+ClaseDatos.Estado_laboral+".txt");
 
             txtw.Write("Datos de empleado:\n\n");
-            txtw.Write("Cedula de identidad: " + ClaseDatos.cedula + "\n");
+            txtw.Write("Cedula de identidad: " + ClaseDatos.Cedula + "\n");
             txtw.Write("Nombre completo: " + ClaseDatos.NombreCompleto_empleado+"\n");
-            txtw.Write("Tanda laboral: " + ClaseDatos.tanda+"\n");
-            txtw.Write("Metodo de pago: " + ClaseDatos.tipo_pago + "\n");
-            if (ClaseDatos.cuenta !=0) {
-            txtw.Write("Cuenta bancaria: " + ClaseDatos.cuenta + "\n");
+            txtw.Write("Tanda laboral: " + ClaseDatos.Tanda+"\n");
+            txtw.Write("Metodo de pago: " + ClaseDatos.Tipo_pago + "\n");
+            if (ClaseDatos.Cuenta !=0) {
+            txtw.Write("Cuenta bancaria: " + ClaseDatos.Cuenta + "\n");
             }
-            txtw.Write("Salario por hora: " + ClaseDatos.salarioPorHora + "\n");
-            txtw.Write("Salario por mes: " + ClaseDatos.salarioPorMes + "\n");
-            txtw.Write("Estado laboral: " + ClaseDatos.estado_laboral + "\n");
+            txtw.Write("Salario por hora: " + ClaseDatos.SalarioPorHora + "\n");
+            txtw.Write("Salario por mes: " + ClaseDatos.SalarioPorMes + "\n");
+            txtw.Write("Estado laboral: " + ClaseDatos.Estado_laboral + "\n");
 
             //Determinar el estado laboral del empleado
-            if (ClaseDatos.estado_laboral == "Vacaciones" || ClaseDatos.estado_laboral== "Permiso") {
-                txtw.Write("Desde: " + ClaseDatos.fecha_inicio + "\n");
-                txtw.Write("Hasta: " + ClaseDatos.fecha_hasta + "\n");
-            }else if(ClaseDatos.estado_laboral== "Desvinculado")
+            if (ClaseDatos.Estado_laboral == "Vacaciones" || ClaseDatos.Estado_laboral== "Permiso") {
+                txtw.Write("Desde: " + ClaseDatos.Fecha_inicio + "\n");
+                txtw.Write("Hasta: " + ClaseDatos.Fecha_hasta + "\n");
+            }else if(ClaseDatos.Estado_laboral== "Desvinculado")
             {
-                txtw.Write("Motivo de desvinculacion: " + ClaseDatos.motivoDesvinculado + "\n");
+                txtw.Write("Motivo de desvinculacion: " + ClaseDatos.MotivoDesvinculado + "\n");
             }
             //Cierre documento
             txtw.Close();

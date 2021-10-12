@@ -11,11 +11,11 @@ namespace Nombramiento
         private static string fecha_desde,fecha_hasta;
         public static void Solicitar_Permiso(int localizacion)
         {
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Cuando quiere Solicitar el permiso?\nIngrese formato dia/mes/año con los slash");
             fecha_desde = Console.ReadLine();
             DateTime fechaDesde = DateTime.Parse(fecha_desde);
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Cuando quiere iniciar las vacaciones?\nIngrese formato dia/mes/año con los slash");
             fecha_hasta = Console.ReadLine();
 
@@ -27,7 +27,7 @@ namespace Nombramiento
                 Console.WriteLine("No puede solicitar una fecha tan larga de permiso");
             }
             Console.WriteLine(TablaADM.Lista[localizacion + 1] + " Tendra " + dias_vacaciones + " Dias de Permiso\n\n");
-            Extras.Clean();
+            Console.Clear();
             Almacena();
             Sobreescribe(localizacion);
             Print.Printer();
@@ -36,18 +36,18 @@ namespace Nombramiento
         //Se guarda en las ClaseDatos
         private static void Almacena()
         {
-            ClaseDatos.fecha_inicio = fecha_desde;
+            ClaseDatos.Fecha_inicio = fecha_desde;
 
-            ClaseDatos.estado_laboral = "Permiso";
+            ClaseDatos.Estado_laboral = "Permiso";
 
-            ClaseDatos.fecha_hasta = fecha_hasta;
+            ClaseDatos.Fecha_hasta = fecha_hasta;
 
         }
 
         //Se sobreescribe los datos
         private static void Sobreescribe(int localizacion)
         {
-            TablaADM.Lista[localizacion + 5] = ClaseDatos.estado_laboral;
+            TablaADM.Lista[localizacion + 5] = ClaseDatos.Estado_laboral;
 
             TablaADM.Lista[localizacion + 6] = fecha_desde;
 

@@ -11,7 +11,7 @@ namespace Nombramiento
         public static string fecha_desde,fecha_hasta;
         public static void Solicitar_vacaciones(int localizacion)
         {
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Desea solicitar vacaciones para " + TablaADM.Lista[localizacion + 1] + "?\n");
             Console.WriteLine("1-Si\n2-No\n\nSu opcion: ");
             int op = Convert.ToInt32(Console.ReadLine());
@@ -20,7 +20,7 @@ namespace Nombramiento
                 case 1: AgregarVacaciones(localizacion);
                     break;
                 case 2:
-                    Extras.Clean();
+                    Console.Clear();
                     Console.WriteLine("Ingrese cedula: ");
                     string cedula = Convert.ToString(Console.ReadLine());
                     Busqueda.Buscador(cedula);
@@ -32,13 +32,13 @@ namespace Nombramiento
         {
          
             
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Cuando quiere iniciar las vacaciones?\nIngrese formato Mes/Dia/Año con los slash");
             fecha_desde = Console.ReadLine();
             
             DateTime fechaDesde = DateTime.Parse(fecha_desde);
             TablaADM.Lista[localizacion + 6] = fecha_desde;
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Cuando quiere iniciar las vacaciones?\nIngrese formato Mes/Dia/Año con los slash");
             fecha_hasta = Console.ReadLine();
      
@@ -46,7 +46,7 @@ namespace Nombramiento
             DateTime fechaHasta = DateTime.Parse(fecha_hasta);
             TimeSpan resta = fechaHasta.Subtract(fechaDesde);
             int dias_vacaciones = resta.Days;
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine(TablaADM.Lista[localizacion + 1] + " Tendra " + dias_vacaciones + " Dias de vacaciones\n\n");
             Almacena();
             Asigna();
@@ -55,21 +55,21 @@ namespace Nombramiento
 
         public static void Almacena()
         {
-            ClaseDatos.fecha_inicio = fecha_desde;
+            ClaseDatos.Fecha_inicio = fecha_desde;
 
-            ClaseDatos.estado_laboral = "Permiso";
+            ClaseDatos.Estado_laboral = "Permiso";
 
-            ClaseDatos.fecha_hasta = fecha_hasta;
+            ClaseDatos.Fecha_hasta = fecha_hasta;
 
         }
 
         private static void Asigna()
         {
-            ClaseDatos.estado_laboral = "Vacaciones";
+            ClaseDatos.Estado_laboral = "Vacaciones";
 
-            ClaseDatos.fecha_inicio = fecha_desde;
+            ClaseDatos.Fecha_inicio = fecha_desde;
 
-            ClaseDatos.fecha_hasta = fecha_hasta;
+            ClaseDatos.Fecha_hasta = fecha_hasta;
 
 
         }

@@ -37,14 +37,14 @@ namespace Nombramiento
 
                 if (res == 1 || res == 2)
                 {
-                    Extras.Clean();
+                    Console.Clear();
                     Console.WriteLine("Ingrese un numero de cuentas:\n");
-                    ClaseDatos.cuenta = Convert.ToInt32(Console.ReadLine());
-                    TablaADM.Lista.Add(Convert.ToString(ClaseDatos.cuenta));
+                    ClaseDatos.Cuenta = Convert.ToInt32(Console.ReadLine());
+                    TablaADM.Lista.Add(Convert.ToString(ClaseDatos.Cuenta));
                 }
                 else if (res == 3)
                 {
-                    ClaseDatos.cuenta = 0;
+                    ClaseDatos.Cuenta = 0;
                     TablaADM.Lista.Add("Cheque");
                 }
                 if (res == 1)
@@ -60,7 +60,7 @@ namespace Nombramiento
                 TablaADM.Lista.Add("Laborando");
                 TablaADM.Lista.Add("...");
                 TablaADM.Lista.Add("...");
-                Extras.Clean();
+                Console.Clear();
                 Console.WriteLine("Se agrego a: " + ClaseDatos.NombreCompleto_empleado);
                 Print.Printer();          
         }

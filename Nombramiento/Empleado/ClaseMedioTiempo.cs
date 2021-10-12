@@ -10,7 +10,7 @@ namespace Nombramiento
     {
         public void metodopago()
         {
-            ClaseDatos.tipo_pago = "Deposito";
+            ClaseDatos.Tipo_pago = "Deposito";
         }
 
         public void Salario_PorHora()
@@ -18,19 +18,19 @@ namespace Nombramiento
 
         }
 
-        public void salarioPorMes()
+        public static void SalarioPorMes()
         {
-            ClaseDatos.salarioPorMes = (int)((Convert.ToDouble(ClaseDatos.salarioPorHora)) / 23.83) / 4;
+            ClaseDatos.SalarioPorMes = (int)((Convert.ToDouble(ClaseDatos.SalarioPorHora)) / 23.83) / 4;
         }
 
         public void tandaEmpleo()
         {
-            ClaseDatos.tanda = "Medio Tiempo (4Hras diarias)";
+            ClaseDatos.Tanda = "Medio Tiempo (4Hras diarias)";
         }
 
         public void salario_porMes()
         {
-            ClaseDatos.salarioPorMes = (int)((Convert.ToDouble(ClaseDatos.salarioPorHora))*4)*30;
+            ClaseDatos.SalarioPorMes = (int)((Convert.ToDouble(ClaseDatos.SalarioPorHora))*4)*30;
         }
     }
 }

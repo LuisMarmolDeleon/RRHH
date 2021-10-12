@@ -19,7 +19,7 @@ namespace Nombramiento
                     localizador = i;
                      break;
                  }
-                Extras.Clean();
+                Console.Clear();
              }
             if (localizador != 9*9*9)
             {
@@ -27,7 +27,7 @@ namespace Nombramiento
             }
             else
             {
-                Extras.Clean();
+                Console.Clear();
                 Console.WriteLine("No pudimos encontrar a alguien con el numero de cedula: " + cedula+"\n\n");
                 Inicio.Bienvenida();
             }
@@ -36,7 +36,7 @@ namespace Nombramiento
         //Impresion de dato encontrado
         public static void Printer(int localizacion)
         {
-            Extras.Clean();
+            Console.Clear();
             Console.WriteLine("Dato encontrado\n\n");
             Console.WriteLine("Cedula: "+TablaADM.Lista[localizacion]);
 
@@ -59,13 +59,13 @@ namespace Nombramiento
         {
             ClaseDatos.NombreCompleto_empleado = TablaADM.Lista[localizacion + 1];
 
-            ClaseDatos.salarioPorHora = Convert.ToInt32(TablaADM.Lista[localizacion + 2]);
+            ClaseDatos.SalarioPorHora = Convert.ToInt32(TablaADM.Lista[localizacion + 2]);
 
-            ClaseDatos.cuenta = Convert.ToInt32(TablaADM.Lista[localizacion + 3]);
+            ClaseDatos.Cuenta = Convert.ToInt32(TablaADM.Lista[localizacion + 3]);
 
-            ClaseDatos.tanda = TablaADM.Lista[localizacion + 4];
+            ClaseDatos.Tanda = TablaADM.Lista[localizacion + 4];
 
-            ClaseDatos.estado_laboral = TablaADM.Lista[localizacion + 5];
+            ClaseDatos.Estado_laboral = TablaADM.Lista[localizacion + 5];
         }
 
         //Solicitudes

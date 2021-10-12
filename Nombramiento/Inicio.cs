@@ -28,16 +28,15 @@ namespace Nombramiento
             switch (opp)
             {
                 case 1:
-                    Extras.Clean();
+                    Console.Clear();
                     Registro_empleado.RegistroEmpleado();
                     break;
 
                 case 2:
-                    Extras.Clean();
+                    Console.Clear();
                     Console.WriteLine("Ingrese numero de cedula");
                     cedula=Console.ReadLine();
                     Busqueda.Buscador(cedula);
-             
                     break;
 
                 case 3:
@@ -47,4 +46,3 @@ namespace Nombramiento
         }
     }
 }
- 

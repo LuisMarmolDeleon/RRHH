@@ -9,7 +9,7 @@ namespace Nombramiento
     class Extras
     {
         //Funcion de limpiar pantalla
-        public static void Clean() => Console.Clear();
+       
 
         public static void Volver()
         {
@@ -20,7 +20,7 @@ namespace Nombramiento
             switch (op)
             {
                 case 1:
-                    Clean();
+                    Console.Clear();
                     Inicio.Bienvenida();
                     break;
 
@@ -29,7 +29,7 @@ namespace Nombramiento
                     break;
 
                 default:
-                    Extras.Clean();
+                    Console.Clear();
                     Console.Write("Ha ingresado una opcion invalida!");
                     Volver();
                     break;
